@@ -1,0 +1,32 @@
+{
+  "name": "notice",
+  "version": "1.0.0",
+  "description": "Notice Board",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metalmount/ANDELA_XVII_PROJECT.git"
+  },
+  "keywords": [
+    "notice"
+  ],
+  "author": "SOKUNBI TAIWO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/metalmount/ANDELA_XVII_PROJECT/issues"
+  },
+  "homepage": "https://github.com/metalmount/ANDELA_XVII_PROJECT#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

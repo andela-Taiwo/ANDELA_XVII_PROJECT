@@ -1,0 +1,38 @@
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Notice Board</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel='stylesheet' href='/stylesheets/chunkfive-fontface.css'>
+    </head>
+    <body>
+
+    <ul>
+      <li><a href="/general">General</a></li>
+      <li><a href="/staff">Staff</a></li>
+      <li><a href="/fellow">Fellow</a></li>
+    </ul>
+
+      <h3>Welcome to General Notice Board</h3>
+
+      <form action="/general" method="POST">
+      Name: <br>
+      <input type="text" placeholder="Full name" name="name"><br>
+      Category:<br>
+      <select name="dropdown">
+        <option value="general" selected>General</option>
+        <option value="fellow">Fellow</option>
+        <option value="staff">Staff</option>
+      </select><br>
+      Title: <br>
+      <input type="text" placeholder="Title" name="title"><br>
+      Message: <br>
+       <textarea cols="17" rows="12" placeholder="Message" name="message"></textarea><br>
+       Due Date: <br>
+       <input type="text" name="date" placeholder="dd/mm/yyyy"><br>
+      
+      <button type="submit">Post</button>
+    </form>
+    </body>
+    </html>
