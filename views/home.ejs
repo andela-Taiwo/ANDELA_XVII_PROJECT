@@ -1,0 +1,137 @@
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Notice Board</title>
+    <link rel='stylesheet' href='/css/bootstrap.css'>
+    <link rel='stylesheet' href='/css/style.css'>
+   
+
+    <script type="text/javascript">
+
+      function checkDate(field)
+        {
+          var allowBlank = true;
+          var minYear = 2017;
+          var maxYear = (new Date()).getFullYear();
+
+          var errorMsg = "";
+
+          // regular expression to match required date format
+          re = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+
+          if(field.value != '') {
+            if(regs = field.value.match(re)) {
+              if(regs[1] < 1 || regs[1] > 31) {
+                errorMsg = "Invalid value for day: " + regs[1];
+              } else if(regs[2] < 1 || regs[2] > 12) {
+                errorMsg = "Invalid value for month: " + regs[2];
+              } else if(regs[3] < minYear || regs[3] > maxYear) {
+                errorMsg = "Invalid value for year: " + regs[3] + " - must be between " + minYear + " and " + maxYear;
+              }
+            } else {
+              errorMsg = "Invalid date format: " + field.value;
+            }
+          } else if(!allowBlank) {
+            errorMsg = "Empty date not allowed!";
+          }
+
+          if(errorMsg != "") {
+            alert(errorMsg);
+            field.focus();
+            return false;
+          }
+
+          return true;
+        }
+
+
+        function checkTime(field)
+        {
+          var errorMsg = "";
+
+          // regular expression to match required time format
+          re = /^(\d{1,2}):(\d{2})(:00)?([ap]m)?$/;
+
+          if(field.value != '') {
+            if(regs = field.value.match(re)) {
+              if(regs[4]) {
+                // 12-hour time format with am/pm
+                if(regs[1] < 1 || regs[1] > 12) {
+                  errorMsg = "Invalid value for hours: " + regs[1];
+                }
+              } else {
+                // 24-hour time format
+                if(regs[1] > 23) {
+                  errorMsg = "Invalid value for hours: " + regs[1];
+                }
+              }
+              if(!errorMsg && regs[2] > 59) {
+                errorMsg = "Invalid value for minutes: " + regs[2];
+              }
+            } else {
+              errorMsg = "Invalid time format: " + field.value;
+            }
+          }
+
+          if(errorMsg != "") {
+            alert(errorMsg);
+            field.focus();
+            return false;
+          }
+
+          return true;
+        }
+
+
+
+        function checkForm(form)
+        {
+          if(!checkDate(form.startdate)) return false;
+          if(!checkTime(form.starttime)) return false;
+          return true;
+        }
+
+
+</script>
+
+
+    </head>
+
+
+    <body>
+      <div class="navBar">
+        <ul>
+          <li><a href="/general">General</a></li>
+          <li><a href="/staff">Staff</a></li>
+          <li><a href="/fellow">Fellow</a></li>
+        </ul>
+      </div>
+
+    
+
+      
+      <div class="mainBg">
+        <h3>Welcome to General Notice Board</h3>
+        <form action="/general" method="POST" onsubmit="return checkForm(this);" >
+      Name: <br>
+      <input type="text" placeholder="Full name" name="name" id="input_text"><br>
+      Category:<br>
+      <select name="dropdown" id="input_text">
+        <option value="general" selected>General</option>
+        <option value="fellow">Fellow</option>
+        <option value="staff">Staff</option>
+      </select><br>
+      Title: <br>
+      <input type="text" placeholder="Title" name="title" required id="input_text"><br>
+      Message: <br>
+       <textarea cols="17" rows="12" placeholder="Message" name="message" required id="input_text"></textarea><br>
+       Due Date: <br>
+       <input type="text" name="startdate" placeholder="dd/mm/yyyy" required pattern="\d{1,2}/\d{1,2}/\d{4}" id="input_text"><br>
+      
+      <button type="submit" id="join">Post</button>
+    </form>
+      </div>
+      
+    </body>
+    </html>

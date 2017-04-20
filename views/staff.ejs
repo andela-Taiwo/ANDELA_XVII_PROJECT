@@ -4,15 +4,17 @@
     <head>
       <meta charset="UTF-8">
       <titleNotice Board|Staff</title>
-    <link rel='stylesheet', href='/stylesheets/style.css'>
-    <link rel='stylesheet', href='/stylesheets/chunkfive-fontface.css'>
+    <link rel='stylesheet' href='/css/style.css'>
+    <link rel='stylesheet' href='/stylesheets/chunkfive-fontface.css'>
     </head>
     <body>
-    <ul>
-      <li><a href="/general">General</a></li>
-      <li><a href="#">Staff</a></li>
-      <li><a href="/fellow">Fellow</a></li>
-    </ul>
+      <div class="navBar">
+        <ul>
+          <li><a href="/general">General</a></li>
+          <li><a href="/staff">Staff</a></li>
+          <li><a href="/fellow">Fellow</a></li>
+        </ul>
+      </div>
     <h3>Welcome to Staff Notice Board</h3>
     <ul class="announcements">
       <% for(var i=0; i<announcements.length; i++) {%>
@@ -39,7 +41,7 @@
           <b>Message: </b><span><%= announcements[i].message %></span>
 
         </li>
-        =====================================================================
+        <hr>
         <% } %>
       <% } %>
     </ul>

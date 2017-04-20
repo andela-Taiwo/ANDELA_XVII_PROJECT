@@ -7,6 +7,7 @@ var db
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs');
+app.use(express.static('public'))
 
 MongoClient.connect('mongodb://metalmount:metalmount%4082@ds163940.mlab.com:63940/notice-board',(err,database)=>{
   if(err) return console.log(err)
@@ -17,7 +18,7 @@ MongoClient.connect('mongodb://metalmount:metalmount%4082@ds163940.mlab.com:6394
 });
 
 app.get('/',(req,res) =>{
-  res.render('index.ejs');  
+  res.render('home.ejs');  
 });
 
 app.get('/general', (req,res)=>{
@@ -50,4 +51,3 @@ app.post('/general',(req,res)=>{
 	})
 	
 })
-
