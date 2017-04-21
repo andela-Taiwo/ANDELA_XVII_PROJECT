@@ -1,0 +1,63 @@
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+   <meta charset="UTF-8">
+      <title>Notice Board</title>
+    <link rel='stylesheet' href='/css/bootstrap.css'>
+    <link rel='stylesheet' href='/css/style.css'>
+   
+    </head>
+    <body>
+        <div class="container">
+
+          <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link " href="/">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/register">Register</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link" href="/users/logout">Logout</a>
+            </li>
+          </ul>
+        </nav>
+        <div class=" page-title">
+        <h3 class="text-muted logo">Andela Notice Board</h3>
+        </div>
+      </div>
+
+
+  
+    <div class="row">
+    
+
+      <div class="col-sm-6 col-md-6 col-md-offset-5">
+        <h2 class="text-center.login-title"> Sign in to Notice Board</h2>
+          <div class="account-wall">
+            <img class='profile-img' src='https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120'>
+            <form class='form-signin' action='/users/login', method='POST'>
+              <input type='text' name='username' class='form-control' placeholder='Username' required  autofocus>
+              <input type='password' name='password' class='form-control' placeholder='Password' required>
+              <button class='btn btn-lg btn-primary btn-block' type='submit'> Sign in </button>
+              
+          <a href='/signup' class='text-center new-account'> Create an account
+          </a>
+        
+          <h1 class="text-centererror-message">not login</h1>
+          </form>
+          </div>  
+    </div>
+
+  </div>
+  <footer class="footer">
+        <p>&copy; Sokunbi Taiwo 2017</p>
+  </footer>
+
+  </body>
+  </html>
