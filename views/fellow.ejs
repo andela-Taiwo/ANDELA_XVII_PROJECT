@@ -39,7 +39,7 @@
     </div>
        <ul class="announcements">
       <% for(var i=0; i<announcements.length; i++) {%>
-        <% if(announcements[i].dropdown === 'general'){%>
+        <% if(announcements[i].dropdown === 'fellow' &&(announcements[i].startdate>= new Date().toLocaleDateString()) ){%>
         <div class="announcements-group">
         <li class="message">
           <b>Announcer: </b><span><%= announcements[i].name %></span>          
