@@ -36,19 +36,19 @@ router.get('/home',function(req,res){
 });
 
 router.get('/general', (req,res)=>{
-	db.collection('announcements').find().sort({"_id":-1}).toArray((err,result)=>{
+	db.collection('announcements').find().sort({priority:-1}).toArray((err,result)=>{
 		res.render('general.ejs',{announcements:result})
 	})
 })
 
 router.get('/fellow', (req,res)=>{
-	db.collection('announcements').find().sort({"_id":-1}).toArray((err,result)=>{
+	db.collection('announcements').find().sort({priority:-1}).toArray((err,result)=>{
 		res.render('fellow.ejs',{announcements:result})
 	})
 })
 
 router.get('/staff', (req,res)=>{
-	db.collection('announcements').find().sort({"_id":-1}).toArray((err,result)=>{
+	db.collection('announcements').find().sort({priority:-1}).toArray((err,result)=>{
 		res.render('staff.ejs',{announcements:result})
 	})
 })

@@ -37,10 +37,10 @@
       <div class=" page-title">
     <h3>Welcome to Staff Notice Board</h3>
     </div>
-    <div class="anouncements-group">
-    <ul class="announcements">
+       <ul class="announcements">
       <% for(var i=0; i<announcements.length; i++) {%>
-      	<% if(announcements[i].dropdown === 'staff'){%>
+        <% if(announcements[i].dropdown === 'general'){%>
+        <div class="announcements-group">
         <li class="message">
           <b>Announcer: </b><span><%= announcements[i].name %></span>          
 
@@ -63,7 +63,12 @@
           <b>Message: </b><span><%= announcements[i].message %></span>
 
         </li>
+        <li class="message">
+          <b>Due Date: </b><span><%= announcements[i].startdate %></span>
+        </li>
+
         <hr>
+        </div>
         <% } %>
       <% } %>
     </ul>
