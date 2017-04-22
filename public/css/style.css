@@ -58,7 +58,7 @@ body{
   z-index: 2;
 
 }
-
+/***********************************Post Form********************************/
 .mainBg form {
 
   border-radius: 1px;
@@ -68,13 +68,16 @@ body{
   left: 475px;
   top: 60px;
   padding-top: 20px;
-  width: 450px;
-  height: 450px;
+  width: 600px;
+  height: 570px;
   z-index: 11;
   text-align: center;
 
 
 }
+
+
+
 
 
 #input_text{
@@ -252,4 +255,59 @@ footer{
 
 .page-title h3{
   margin-top: 30px;
+}
+
+
+
+/*********************** Registration Form **********************************/
+
+.mainBgReg form {
+
+  border-radius: 1px;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 1px 0px 2px 0px rgba(0, 0, 0, 0.49);
+  position: relative;
+  left: 5px;
+  top: 60px;
+  padding-top: 20px;
+  width: 600px;
+  height: 700px;
+  z-index: 11;
+  padding-left: 30px;
+
+
+}
+
+
+.input_text{
+  left: 502px;
+  border-width: 1px;
+  width: 350px;
+  height: 35px;
+  border-color: rgb(198, 198, 198);
+  background-color: rgb(253, 253, 253);
+  border-style: solid;
+  margin-bottom:10px;
+  margin-left:6px;
+
+}
+
+.control-label {
+  text-align: left;
+  
+  width: 140px;
+}
+
+#legend {
+  text-align: center;
+
+}
+
+.help-block{
+  text-align: center;
+}
+
+#regBtn{
+  margin-left: 40%;
+
 }

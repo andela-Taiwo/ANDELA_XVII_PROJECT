@@ -3,10 +3,11 @@
     <html lang="en">
     <head>
       <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <titleNotice Board|General</title>
       <link rel='stylesheet' href='/css/bootstrap.css'>
       <link rel='stylesheet' href='/css/style.css'>
-      
+      <script type='text/javascript' src="/js/bootstrap.js"></script>
           </head>
     <body>
 
@@ -46,25 +47,15 @@
       	<% if(announcements[i].dropdown === 'general' &&(announcements[i].startdate>= new Date().toLocaleDateString()) ){%>
         <div class="announcements-group">
         <li class="message">
-          <b>Announcer: </b><span><%= announcements[i].name %></span>          
+          <span><h4><%= announcements[i].name %></h4></span>          
 
         </li>
+
 
         <li class="message">
-       
-          <b>Title: </b<span><%= announcements[i].title %></span>
-
-
-        </li>
-         <li class="message">
-
-          <b>Audience : </b><span><%= announcements[i].dropdown %></span>
+              <%= announcements[i].title %></span><br>
  
-
-        </li>
-        <li class="message">
- 
-          <b>Message: </b><span><%= announcements[i].message %></span>
+          <b>Message: </b><h4><span><%= announcements[i].message %><h4></span>
 
         </li>
         <li class="message">

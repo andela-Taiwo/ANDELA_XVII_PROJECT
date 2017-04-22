@@ -89,6 +89,7 @@ app.use(function(req,res,next){
 	res.locals.success_msg = req.flash('success_msg');
 	res.locals.error_msg = req.flash('error_msg');
 	res.locals.error = req.flash('error');
+  res.locals.user = req.user || null;
 	next();
 });
 
@@ -96,11 +97,13 @@ app.use(function(req,res,next){
 app.use('/',routes);
 app.use('/users',users);
 
+app.set('port', (process.env.PORT || 3000));
+
 
 MongoClient.connect('mongodb://metalmount:metalmount%4082@ds163940.mlab.com:63940/notice-board',(err,database)=>{
   if(err) return console.log(err)
   	db = database;
-  app.listen(3000, function(){
+  app.listen(app.get('port'), function(){
   console.log("listening on 3000");
 })
 });
