@@ -25,8 +25,7 @@ var routes =require('./routes/index');
 var users = require('./routes/users');
 
 
-//app.use(express.static("public"));
-//app.use(bodyParser.urlencoded({extended: true}))
+
 
 // Middleware
 app.set('views', path.join(__dirname, 'views'));
@@ -108,47 +107,3 @@ MongoClient.connect('mongodb://metalmount:metalmount%4082@ds163940.mlab.com:6394
 })
 });
 
-// app.get('/',(req,res) =>{
-//   res.render('register.ejs');  
-// });
-
-
-
-
-
-// app.post('/general',(req,res)=>{
-// 	db.collection('announcements').save(req.body,(err,result)=>{
-// 	  if(err) return console.log(err)	
-	
-// 	  console.log("saved to the database");
-// 	  db.collection('announcements').find().toArray((err,results)=>{
-// 	  	console.log(results)
-// 	  })
-// 	  res.redirect('/general');
-// 	})
-	
-// })
-// app.post('/general',(req,res)=>{
-// 	db.collection('announcements').save(req.body,(err,result)=>{
-// 	  if(err) return console.log(err)	
-	
-// 	  console.log("saved to the database");
-// 	  db.collection('announcements').find().toArray((err,results)=>{
-// 	  	console.log(results)
-// 	  })
-// 	  res.redirect('/general');
-// 	})
-	
-// })
-// app.post('/general',(req,res)=>{
-// 	db.collection('announcements').save(req.body,(err,result)=>{
-// 	  if(err) return console.log(err)	
-	
-// 	  console.log("saved to the database");
-// 	  db.collection('announcements').find().toArray((err,results)=>{
-// 	  	console.log(results)
-// 	  })
-// 	  res.redirect('/general');
-// 	})
-	
-// })

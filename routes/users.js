@@ -42,7 +42,7 @@ router.get('/general', (req,res)=>{
 })
 
 router.get('/fellow', (req,res)=>{
-	db.collection('announcements').find().sort({priority:-1}).toArray((err,result)=>{
+	db.collection('announcements').find().sort({"id":-1}).toArray((err,result)=>{
 		res.render('fellow.ejs',{announcements:result})
 	})
 })
@@ -124,16 +124,6 @@ passport.use(new LocalStrategy(
    	})
    });
 
-    // User.findOne({ username: username }, function(err, user) {
-    //   if (err) { return done(err); }
-    //   if (!user) {
-    //     return done(null, false, { message: 'Incorrect username.' });
-    //   }
-    //   if (!user.validPassword(password)) {
-    //     return done(null, false, { message: 'Incorrect password.' });
-    //   }
-    //   return done(null, user);
-    // });
   }
 ));
 
@@ -154,9 +144,7 @@ router.post('/login',
   function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-    //res.redirect('/users/' + req.user.username);
-   // sess=req.session;
-    //sess.username=req.body.username;
+
     res.redirect('/users/home' + req.user.username);
   });
 
